@@ -1,0 +1,15 @@
+{
+  "domain": "enflic_daikin_vrv",
+  "name": "enflic_daikin_vrv",
+  "codeowners": ["@KVSoong"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://www.home-assistant.io/integrations/enflic_daikin_vrv",
+  "homekit": {},
+  "iot_class": "local_polling",
+  "requirements": ["httpx==0.26.0"],
+  "issue_tracker": "https://github.com/KVSoong/enflic_daikin_vrv/issues",
+  "ssdp": [],
+  "zeroconf": [],
+  "version": "v0.0.1"
+}

@@ -1,0 +1,26 @@
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Get version
+        id: version
+        uses: home-assistant/actions/helpers/version@master
+
+      - name: Patch manifest and zip
+        run: |
+          sed -i 's/v0.0.0/${{ steps.version.outputs.version }}/' custom_components/enflic_daikin_vrv/manifest.json
+
+          cd custom_components/enflic_daikin_vrv/
+          zip ../../enflic_daikin_vrv.zip
+      - uses: JasonEtco/upload-to-release@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: ./enflic_daikin_vrv.zip application/zip

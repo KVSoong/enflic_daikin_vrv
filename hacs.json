@@ -1,0 +1,7 @@
+{
+    "name": "Enflic Daikin VRV Climate",
+    "render_readme": true,
+    "zip_release": true,
+    "filename": "enflic_daikin_vrv.zip",
+    "hide_default_branch": true
+}
